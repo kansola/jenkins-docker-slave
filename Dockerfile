@@ -32,6 +32,7 @@ COPY .ssh/authorized_keys /home/jenkins/.ssh/authorized_keys
 
 RUN chown -R jenkins:jenkins /home/jenkins/.m2/ && \
     chown -R jenkins:jenkins /home/jenkins/.ssh/ && \
+    chown jenkins:docker /var/run/docker.sock && \
     usermod -a -G docker jenkins
 
 
