@@ -32,8 +32,8 @@ COPY .ssh/authorized_keys /home/jenkins/.ssh/authorized_keys
 
 RUN chown -R jenkins:jenkins /home/jenkins/.m2/ && \
     chown -R jenkins:jenkins /home/jenkins/.ssh/ && \
-    usermod -a -G docker jenkins && \
-    reboot
+    usermod -a -G docker jenkins
+    
 
 
 # Standard SSH port
