@@ -32,7 +32,11 @@ COPY .ssh/authorized_keys /home/jenkins/.ssh/authorized_keys
 
 RUN chown -R jenkins:jenkins /home/jenkins/.m2/ && \
     chown -R jenkins:jenkins /home/jenkins/.ssh/ && \
-    usermod -a -G docker jenkins
+    sudo groupadd docker && \
+    sudo usermod -aG docker jenkins && \
+    sudo service docker restart && \
+    sudo chown jenkins /var/run/docker.sock
+   # usermod -a -G docker jenkins
     
 
 
