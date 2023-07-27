@@ -19,6 +19,8 @@ RUN apt-get update && \
     apt-get install docker-ce docker-ce-cli containerd.io -y && \
 # Install maven
     apt-get install -qy maven && \
+# Install groovy
+    apt-get install -qy groovy && \
 # Cleanup old packages
     apt-get -qy autoremove && \
 # Add user jenkins to the image
